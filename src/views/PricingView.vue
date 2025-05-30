@@ -1,0 +1,3 @@
+<template>
+    Pricing View
+</template>
