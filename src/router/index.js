@@ -1,3 +1,4 @@
+import Test from '@/sandbox/Test.vue';
 import AboutView from '@/views/AboutView.vue';
 import BlogView from '@/views/BlogView.vue';
 import HomeView from '@/views/HomeView.vue';
@@ -75,7 +76,7 @@ const router = createRouter({
     // Blog View Routes
     {
       path: '/blogs',
-      name: 'blog',
+      name: 'blogs',
       component: BlogView,
     },
     {
@@ -87,9 +88,12 @@ const router = createRouter({
       path: '/:catchAll(.*)',
       name: 'nf404',
       component: NotFoundView,
-    }
+    },
     // VISUALISATIONS OF COMPONENTS
-    
+    {
+      path: '/test',
+      component: Test
+    }
   ],
 });
 

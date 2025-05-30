@@ -28,3 +28,7 @@ h4 {
 p {
     font-size: 18px;
 }
+
+button {
+    cursor: pointer;
+}
