@@ -9,6 +9,13 @@
     --white: #FFF;
 }
 
+body {
+    margin: 0 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h1 {
     font-size: 60px;
 }
@@ -29,6 +36,19 @@ p {
     font-size: 18px;
 }
 
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+p::selection {
+    background-color: var(--primary-color);
+}
+
 button {
     cursor: pointer;
+}
+
+#app {
+    max-width: 1366px;
+    width: 100%;
 }

@@ -1,0 +1,9 @@
+@import './main.css';
+
+@media screen and (max-width: 1279px) {
+
+    body {
+        margin: 0 60px;
+    }
+
+}

@@ -92,6 +92,7 @@ const router = createRouter({
     // VISUALISATIONS OF COMPONENTS
     {
       path: '/test',
+      name: 'test',
       component: Test
     }
   ],

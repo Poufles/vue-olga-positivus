@@ -1,35 +1,49 @@
 <template>
     <nav id="navbar">
         <div id="left">
-            <RouterLink :to="{ name: 'home' }" class="logo">
+            <RouterLink :to="{ name: 'test' }" class="logo">
                 <Logo :dark="true" />
             </RouterLink>
         </div>
         <div id="right">
             <ul id="links" v-if="!isMobile">
                 <li class="link">
-                    <RouterLink :to="{ name: 'about' }"><NavLinkButton :text="'About'" /></RouterLink>
+                    <RouterLink :to="{ name: 'about' }">
+                        <NavLinkButton :text="'About'" />
+                    </RouterLink>
                 </li>
                 <li class="link">
-                    <RouterLink :to="{ name: 'services' }"><NavLinkButton :text="'Services'" /></RouterLink>
+                    <RouterLink :to="{ name: 'services' }">
+                        <NavLinkButton :text="'Services'" />
+                    </RouterLink>
                 </li>
                 <li class="link">
-                    <RouterLink :to="{ name: 'usecases' }"><NavLinkButton :text="'Use Cases'" /></RouterLink>
+                    <RouterLink :to="{ name: 'usecases' }">
+                        <NavLinkButton :text="'Use Cases'" />
+                    </RouterLink>
                 </li>
                 <li class="link">
-                    <RouterLink :to="{ name: 'pricing' }"><NavLinkButton :text="'Pricing'" /></RouterLink>
+                    <RouterLink :to="{ name: 'pricing' }">
+                        <NavLinkButton :text="'Pricing'" />
+                    </RouterLink>
                 </li>
                 <li class="link">
-                    <RouterLink :to="{ name: 'blogs' }"><NavLinkButton :text="'Blog'" /></RouterLink>
+                    <RouterLink :to="{ name: 'blogs' }">
+                        <NavLinkButton :text="'Blog'" />
+                    </RouterLink>
                 </li>
                 <li class="link">
-                    <a href="https://github.com/Poufles/vue-olga-positivus" target="_blank"><BasicButton :text="'Request a quote'" :type="1" /></a>
+                    <a href="https://github.com/Poufles/vue-olga-positivus" target="_blank">
+                        <BasicButton :text="'Request a quote'" :type="1" />
+                    </a>
                 </li>
             </ul>
-            <div class="component" v-else>
-                I am a component
-            </div>
+            <Hamburger v-else @click="ShowSidePanel()" />
         </div>
+        <!-- DEAL LATER -->
+        <!-- <div class="component side-panel" :class="{ show: sidePanel }" v-if="isMobile">
+            <Hamburger @click="ShowSidePanel()" />
+        </div> -->
     </nav>
 </template>
 
@@ -37,8 +51,10 @@
 import { ref } from 'vue';
 import Logo from '../Logo/Logo.vue';
 import NavLinkButton from '../Buttons/NavLinkButton/NavLinkButton.vue';
+import Hamburger from '../Buttons/Hamburger/Hamburger.vue';
 
 const isMobile = ref(false);
+const sidePanel = ref(false);
 
 CheckWidth();
 
@@ -49,10 +65,23 @@ window.addEventListener('resize', () => {
 function CheckWidth() {
     const width = window.innerWidth;
 
-    if (width < 1050) isMobile.value = true;
+    if (width < 1120) isMobile.value = true;
     else isMobile.value = false;
 }
 
+// Deal Later
+function ShowSidePanel() {
+    if (isMobile.value && !sidePanel.value) {
+        sidePanel.value = true;
+        document.body.setAttribute('style', 'height: 100dvh; overflow-y: hidden');
+        return;
+    };
+
+    if (isMobile.value && sidePanel.value) {
+        sidePanel.value = false;
+        document.body.removeAttribute('style');
+    };
+};
 </script>
 
 <style scoped>
@@ -78,5 +107,25 @@ function CheckWidth() {
     display: flex;
     gap: 40px;
     align-items: center;
+}
+
+/* Deal Later */
+.side-panel {
+    --width: 320px;
+
+    /* border: 2px solid red; */
+    background-color: var(--white);
+    width: var(--width);
+    height: 100dvh;
+    padding-top: 50px;
+    position: absolute;
+    top: 0;
+    right: calc(var(--width) * -1);
+    transition: 0.2s;
+    z-index: 50;
+}
+
+.side-panel.show {
+    right: 0px;
 }
 </style>

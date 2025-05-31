@@ -5,7 +5,7 @@ import App from './App.vue'
 import router from './router'
 import BasicButton from './components/Buttons/BasicButton/BasicButton.vue';
 
-import './styles/main.css';
+import './styles/main-responsive.css';
 
 const app = createApp(App);
 
