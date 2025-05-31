@@ -5,6 +5,7 @@
         <ServiceSection />
         <ActionContact />
         <CaseStudies />
+        <WorkingProcess />
     </MainLayout>
 </template>
 
@@ -15,6 +16,7 @@ import LogoCarousel from '@/components/Carousel/LogoCarousel/LogoCarousel.vue';
 import ServiceSection from '@/components/Sections/ServiceSection/ServiceSection.vue';
 import ActionContact from '@/components/Sections/ActionContact/ActionContact.vue';
 import CaseStudies from '@/components/Sections/CaseStudies/CaseStudies.vue';
+import WorkingProcess from '@/components/Sections/WorkingProcess/WorkingProcess.vue';
 </script>
 
 <style scoped>
