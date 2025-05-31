@@ -7,9 +7,11 @@
     --secondary-color: #191A23;
     --accent-color: #F3F3F3;
     --white: #FFF;
+    --gray: #F3F3F3;
 }
 
 body {
+    height: 800dvh; /* REMOVE LATER */
     margin: 0 100px;
     display: flex;
     flex-direction: column;
