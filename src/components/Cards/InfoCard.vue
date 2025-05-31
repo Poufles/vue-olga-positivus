@@ -88,6 +88,8 @@ function ButtonType() {
 
 .info-card #info-title {
     max-width: 300px;
+    position: relative;
+    z-index: 2;
 }
 
 .info-card img {
