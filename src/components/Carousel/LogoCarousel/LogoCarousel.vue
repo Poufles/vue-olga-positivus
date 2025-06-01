@@ -54,9 +54,6 @@ window.addEventListener('resize', (e) => {
 function CheckSize() {
     componentWidth.value = component.value.getBoundingClientRect().width;
 
-    console.log(`Component: ${componentWidth.value}`);
-    console.log(`Layer: ${layerWidth.value}`);
-
     if (componentWidth.value < layerWidth.value - 1) isMobile.value = true;
     else isMobile.value = false;
 };
@@ -89,12 +86,12 @@ function CheckSize() {
 
 .logo-carousel.running .logo-container {
     display: inline-block;
-    animation: slide linear infinite 10s;
+    animation: slide linear infinite 20s;
 }
 
 .logo-carousel.running .logo-container.alt {
     display: inline-block;
-    animation: slide_alt linear infinite 10s;
+    animation: slide_alt linear infinite 20s;
 }
 
 .logo {
