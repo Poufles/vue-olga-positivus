@@ -1,6 +1,5 @@
 <template>
     <MainLayout />
-    Blog
 </template>
 
 <script setup>

@@ -4,7 +4,7 @@
         <main>
             <slot></slot>
         </main>
-        <!-- <Footer /> -->
+        <Footer />
     </div>
 </template>
 
@@ -15,10 +15,12 @@ import Footer from '@/components/Footer/Footer.vue';
 
 <style scoped>
 #main-layout {
-    margin-top: 50px;
     width: 100%;
     max-width: 1366px;
+    min-height: 100dvh;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 </style>

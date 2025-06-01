@@ -1,5 +1,5 @@
 <template>
-    <button type="button" class="component nav-link-btn" @mouseenter="MoveAnimation()" @mouseleave="MoveAnimation()">
+    <button type="button" class="component nav-link-btn" :class="{ 'type-2': type === 2 }" @mouseenter="MoveAnimation()" @mouseleave="MoveAnimation()">
         <p id="text" :class="{ isMoving }" :data-text="text">{{ text }}</p>
     </button>
 </template>
@@ -9,6 +9,7 @@ import { ref, defineProps } from 'vue';
 
 const props = defineProps({
     text: { type: String, default: 'Button Text' },
+    type: { type: Number, default: 1 }
 });
 
 const isMoving = ref(false);
@@ -65,6 +66,11 @@ function MoveAnimation() {
     transition: var(--_transition-main);
     transition-delay: 0.1s;
     opacity: 0;
+}
+
+/* TYPE */
+.nav-link-btn.type-2 #text  {
+    color: var(--white);
 }
 
 /* LISTENERS */
