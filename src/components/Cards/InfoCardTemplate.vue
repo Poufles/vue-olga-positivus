@@ -1,5 +1,5 @@
 <template>
-    <div class="component info-card-template" :class="{ 'type-2': type === 2, 'type-3': type === 3 }">
+    <div class="component info-card-template" :class="{ 'type-2': type === 2, 'type-3': type === 3, 'type-4': type === 4 }">
         <div class="shadow"></div>
         <div class="wrapper">
             <slot></slot>
@@ -68,6 +68,10 @@ const props = defineProps({
 
 .info-card-template.type-3 .wrapper {
     background-color: var(--secondary-color);
+}
+
+.info-card-template.type-4 .wrapper {
+    background-color: var(--white);
 }
 
 /* LISTENERS */

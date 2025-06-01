@@ -47,7 +47,6 @@ function Expand() {
     width: 100%;
     height: 90px;
     padding: var(--padding);
-    transition: 0.2s;
     overflow: hidden;
 }
 

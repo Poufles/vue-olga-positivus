@@ -15,12 +15,12 @@
 </template>
 
 <script setup>
-import imgService1 from '../../../../public/img/img-2.png';
-import imgService2 from '../../../../public/img/img-3.png';
-import imgService3 from '../../../../public/img/img-4.png';
-import imgService4 from '../../../../public/img/img-1.png';
-import imgService5 from '../../../../public/img/img-5.png';
-import imgService6 from '../../../../public/img/img-6.png';
+import imgService1 from '/img/img-2.png';
+import imgService2 from '/img/img-3.png';
+import imgService3 from '/img/img-4.png';
+import imgService4 from '/img/img-1.png';
+import imgService5 from '/img/img-5.png';
+import imgService6 from '/img/img-6.png';
 </script>
 
 <style setup>

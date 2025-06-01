@@ -6,6 +6,7 @@
         <ActionContact />
         <CaseStudies />
         <WorkingProcess />
+        <Team />
     </MainLayout>
 </template>
 
@@ -17,6 +18,7 @@ import ServiceSection from '@/components/Sections/ServiceSection/ServiceSection.
 import ActionContact from '@/components/Sections/ActionContact/ActionContact.vue';
 import CaseStudies from '@/components/Sections/CaseStudies/CaseStudies.vue';
 import WorkingProcess from '@/components/Sections/WorkingProcess/WorkingProcess.vue';
+import Team from '@/components/Sections/Team/Team.vue';
 </script>
 
 <style scoped>

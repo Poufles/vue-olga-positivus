@@ -23,14 +23,8 @@
     justify-content: center;
 }
 
-@property --bg-color {
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #191A23;
-}
-
 .hamburger-btn .hr {
-    background-color: var(--bg-color);
+    background-color: #191A23;
     width: 30px;
     height: 5px;
     transition: 0.2s;
@@ -38,6 +32,6 @@
 
 /* LISTENERS */
 .hamburger-btn:hover .hr {
-    --bg-color: var(--primary-color);
+    background-color: var(--primary-color);
 }
 </style>

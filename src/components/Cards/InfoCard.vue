@@ -13,7 +13,7 @@
 import { defineProps, ref } from 'vue';
 import MoreButton from '../Buttons/MoreButton/MoreButton.vue';
 import InfoCardTemplate from './InfoCardTemplate.vue';
-import defaultImg from '../../../public/img/img-1.png';
+import defaultImg from '/img/img-1.png';
 
 const props = defineProps({
     title: { type: String, default: 'Info Title' },
