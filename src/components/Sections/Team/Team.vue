@@ -15,12 +15,12 @@
 <script setup>
 import TeamInfo from '@/components/Cards/TeamInfo.vue';
 
-import teamProfile1 from '../../../../public/img/img-team-mouckup-1.png';
-import teamProfile2 from '../../../../public/img/img-team-mouckup-2.png';
-import teamProfile3 from '../../../../public/img/img-team-mouckup-3.png';
-import teamProfile4 from '../../../../public/img/img-team-mouckup-4.png';
-import teamProfile5 from '../../../../public/img/img-team-mouckup-5.png';
-import teamProfile6 from '../../../../public/img/img-team-mouckup-6.png';
+import teamProfile1 from '/img/img-team-mouckup-1.png';
+import teamProfile2 from '/img/img-team-mouckup-2.png';
+import teamProfile3 from '/img/img-team-mouckup-3.png';
+import teamProfile4 from '/img/img-team-mouckup-4.png';
+import teamProfile5 from '/img/img-team-mouckup-5.png';
+import teamProfile6 from '/img/img-team-mouckup-6.png';
 
 const teamProfile = [
     {

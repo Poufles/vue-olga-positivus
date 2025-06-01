@@ -7,6 +7,8 @@
         <CaseStudies />
         <WorkingProcess />
         <Team />
+        <Testimonials />
+        <ContactAccess />
     </MainLayout>
 </template>
 
@@ -19,6 +21,8 @@ import ActionContact from '@/components/Sections/ActionContact/ActionContact.vue
 import CaseStudies from '@/components/Sections/CaseStudies/CaseStudies.vue';
 import WorkingProcess from '@/components/Sections/WorkingProcess/WorkingProcess.vue';
 import Team from '@/components/Sections/Team/Team.vue';
+import Testimonials from '@/components/Sections/Testimonials/Testimonials.vue';
+import ContactAccess from '@/components/Sections/ContactAccess/ContactAccess.vue';
 </script>
 
 <style scoped>

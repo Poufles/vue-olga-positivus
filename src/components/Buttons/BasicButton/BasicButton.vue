@@ -1,6 +1,7 @@
 <template>
-    <button type="button" class="component basic-btn"
-        :class="{ 'type-1': type === 1, 'type-2': type === 2, 'type-3': type === 3, }"
+    <button type="button" class="component basic-btn" :style="CheckLongWidth() ?
+        { '--width': `${width + 300}px` } : null
+        " :class="{ 'type-1': type === 1, 'type-2': type === 2, 'type-3': type === 3, }" ref="component"
         @mouseenter="BackgroundAnimation()" @mouseleave="BackgroundAnimation()">
         <span id="text">{{ text }}</span>
         <span id="bg-color" :class="{ hover: isHover, blur: isBlur }"></span>
@@ -8,15 +9,28 @@
 </template>
 
 <script setup>
-import { defineProps, ref } from 'vue';
+import { defineProps, onMounted, ref } from 'vue';
 
 const props = defineProps({
     text: { type: String, default: 'Button Text' },
     type: { type: Number, default: 1 }
 });
 
+const component = ref(null);
+const width = ref(0);
 const isHover = ref(false);
 const isBlur = ref(false);
+
+onMounted(() => {
+    if (component.value) {
+        width.value = component.value.offsetWidth;
+    };
+});
+
+function CheckLongWidth() {
+    if (width.value > 300) return true;
+    return false;
+};
 
 function BackgroundAnimation() {
     if (!isHover.value) isHover.value = true;
@@ -32,6 +46,8 @@ function BackgroundAnimation() {
 
 <style scoped>
 .basic-btn {
+    --width: 300px;
+
     background-color: var(--white);
     border: 2px solid var(--secondary-color);
     border-radius: 14px;
@@ -99,10 +115,12 @@ function BackgroundAnimation() {
 
 /* LISTENERS */
 .basic-btn:hover #bg-color {
-    width: 300px;
+    width: var(--width);
 }
 
 .basic-btn.type-3:hover #text {
     color: var(--white);
-};
+}
+
+;
 </style>
