@@ -1,5 +1,5 @@
 <template>
-    <article class="component comment-card">
+    <article class="component comment-card" ref="component">
         <div id="comment-info">
             <p id="comment">{{ comment }}</p>
         </div>
@@ -11,11 +11,20 @@
 </template>
 
 <script setup>
+import { defineExpose, ref } from 'vue';
+
+const component = ref(null);
 const props = defineProps({
     author: { type: String, required: true },
     job: { type: String, default: '' },
     comment: { type: String, required: true },
 });
+
+function getComponent() {
+    return component;
+};
+
+defineExpose({ getComponent })
 </script>
 
 <style scoped>
@@ -61,7 +70,7 @@ const props = defineProps({
     border-right: calc(var(--size) + var(--border))solid transparent;
     border-bottom: calc(var(--size) + var(--border))solid transparent;
     border-left: calc(var(--size) + var(--border)) solid transparent;
-    bottom: calc((-1 * var(--size) * 2) - (var(--border) * 2) );
+    bottom: calc((-1 * var(--size) * 2) - (var(--border) * 2));
     left: 58px;
 }
 
