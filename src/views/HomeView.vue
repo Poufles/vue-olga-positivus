@@ -1,7 +1,7 @@
 <template>
     <MainLayout>
         <HeroHome />
-        <LogoCarousel :logos="logos" ></LogoCarousel>
+        <LogoCarousel :logos="logos"></LogoCarousel>
         <ServiceSection />
         <ActionContact />
         <CaseStudies />
@@ -63,5 +63,12 @@ const logos = [
 section {
     margin-top: 70px;
     padding-bottom: 70px;
+}
+
+@media screen and (max-width: 620px) {
+    section {
+        margin-top: 0;
+        padding-bottom: 70px;
+    }
 }
 </style>

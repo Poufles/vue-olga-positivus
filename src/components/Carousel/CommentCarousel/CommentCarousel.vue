@@ -1,9 +1,9 @@
 <template>
     <div class="component comment-carousel" ref="component">
         <div id="comments" :style="[`left: ${centerValue}px`]">
-            <CommentCard class="comment" v-for="comment in comments" :author="comment.author" :job="comment.job"
+            <CommentCard class="comment" ref="commentCardObj" v-for="comment in comments" :author="comment.author" :job="comment.job"
                 :comment="comment.comment" :key="`comment-${comment.id}`" />
-            <CommentCard class="comment" ref="commentCardObj" :author="comments[0].author" :job="comments[0].job"
+            <CommentCard class="comment" :author="comments[0].author" :job="comments[0].job"
                 :comment="comments[0].comment" :key="`comment-${comments[0].id}`" />
         </div>
         <div id="actions">
@@ -83,8 +83,15 @@ const currentIndex = computed(() =>
 );
 
 onMounted(() => {
-    commentCard.value = commentCardObj.value.getComponent().value;
-    ChangeCarouselItem();
+    commentCard.value = commentCardObj.value[0].getComponent();
+
+    commentCardObj.value.forEach(card => {
+        card.defineParent(component.value);
+    });
+
+    setTimeout(() => {
+        ChangeCarouselItem();
+    }, 100);
 });
 
 window.addEventListener('resize', (e) => {

@@ -1,19 +1,16 @@
 <template>
     <section id="action-contact">
-        <div class="wrapper">
-            <div class="container">
-                <div class="action-info">
-                    <h3 id="text">Let's make things happen</h3>
-                    <p id="desc">
-                        Contact us today to learn more about how our digital marketing services can help your business
-                        grow
-                        and succeed online.
-                    </p>
-                    <BasicButton :text="'Get your free proposal'" :type="2" />
-                </div>
-            </div>
-            <picture id="icon">
-                <svg width="494" height="395" viewBox="0 0 494 395" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <SimpleActionCard :title="'Let\'s make things happen'"
+            :desc="'Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.'"
+            :icon="icon" />
+    </section>
+</template>
+
+<script setup>
+import SimpleActionCard from '@/components/Cards/SimpleActionCard.vue';
+
+const icon = `
+<svg width="494" height="395" viewBox="0 0 494 395" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M169 163.5C215.644 163.5 257.858 167.471 288.398 173.887C303.673 177.095 316 180.91 324.497 185.13C328.746 187.24 332.011 189.439 334.208 191.694C336.403 193.948 337.5 196.222 337.5 198.5C337.5 200.778 336.403 203.052 334.208 205.306C332.011 207.561 328.746 209.76 324.497 211.87C316 216.09 303.673 219.905 288.398 223.113C257.858 229.529 215.644 233.5 169 233.5C122.356 233.5 80.1417 229.529 49.6016 223.113C34.3275 219.905 21.9997 216.09 13.5029 211.87C9.25392 209.76 5.98872 207.561 3.79199 205.306C1.59696 203.052 0.5 200.778 0.5 198.5C0.5 196.222 1.59696 193.948 3.79199 191.694C5.98872 189.439 9.25392 187.24 13.5029 185.13C21.9997 180.91 34.3275 177.095 49.6016 173.887C80.1417 167.471 122.356 163.5 169 163.5Z"
                         stroke="black" />
@@ -36,13 +33,7 @@
                     <ellipse cx="132" cy="173" rx="10" ry="20" fill="white" />
                     <ellipse cx="173" cy="173" rx="10" ry="20" fill="white" />
                 </svg>
-            </picture>
-        </div>
-    </section>
-</template>
-
-<script setup>
-
+`
 </script>
 
 <style scoped>

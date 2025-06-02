@@ -11,8 +11,6 @@
 }
 
 body {
-    /* REMOVE LATER */
-    /* height: 800dvh;  */
     min-height: 100dvh;
     margin: 0 100px;
     display: flex;

@@ -6,29 +6,19 @@
             </picture>
             <ul id="links">
                 <li class="link">
-                    <RouterLink :to="{ name: 'about' }">
-                        <NavLinkButton :text="'About'" :type="2" />
-                    </RouterLink>
+                    <NavLinkButton :text="'About'" :type="2" />
                 </li>
                 <li class="link">
-                    <RouterLink :to="{ name: 'services' }">
-                        <NavLinkButton :text="'Services'" :type="2" />
-                    </RouterLink>
+                    <NavLinkButton :text="'Services'" :type="2" />
                 </li>
                 <li class="link">
-                    <RouterLink :to="{ name: 'usecases' }">
-                        <NavLinkButton :text="'Use Cases'" :type="2" />
-                    </RouterLink>
+                    <NavLinkButton :text="'Use Cases'" :type="2" />
                 </li>
                 <li class="link">
-                    <RouterLink :to="{ name: 'pricing' }">
-                        <NavLinkButton :text="'Pricing'" :type="2" />
-                    </RouterLink>
+                    <NavLinkButton :text="'Pricing'" :type="2" />
                 </li>
                 <li class="link">
-                    <RouterLink :to="{ name: 'blogs' }">
-                        <NavLinkButton :text="'Blog'" :type="2" />
-                    </RouterLink>
+                    <NavLinkButton :text="'Blog'" :type="2" />
                 </li>
             </ul>
             <div id="socials" v-if="!WidthMobile()">

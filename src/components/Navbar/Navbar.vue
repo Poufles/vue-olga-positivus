@@ -8,29 +8,19 @@
         <div id="right">
             <ul id="links" v-if="!isMobile">
                 <li class="link">
-                    <RouterLink :to="{ name: 'about' }">
-                        <NavLinkButton :text="'About'" />
-                    </RouterLink>
+                    <NavLinkButton :text="'About'" />
                 </li>
                 <li class="link">
-                    <RouterLink :to="{ name: 'services' }">
-                        <NavLinkButton :text="'Services'" />
-                    </RouterLink>
+                    <NavLinkButton :text="'Services'" />
                 </li>
                 <li class="link">
-                    <RouterLink :to="{ name: 'usecases' }">
-                        <NavLinkButton :text="'Use Cases'" />
-                    </RouterLink>
+                    <NavLinkButton :text="'Use Cases'" />
                 </li>
                 <li class="link">
-                    <RouterLink :to="{ name: 'pricing' }">
-                        <NavLinkButton :text="'Pricing'" />
-                    </RouterLink>
+                    <NavLinkButton :text="'Pricing'" />
                 </li>
                 <li class="link">
-                    <RouterLink :to="{ name: 'blogs' }">
-                        <NavLinkButton :text="'Blog'" />
-                    </RouterLink>
+                    <NavLinkButton :text="'Blog'" />
                 </li>
                 <li class="link">
                     <a href="https://github.com/Poufles/vue-olga-positivus" target="_blank">

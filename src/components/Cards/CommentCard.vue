@@ -1,6 +1,6 @@
 <template>
     <article class="component comment-card" ref="component">
-        <div id="comment-info">
+        <div id="comment-info" :style="style">
             <p id="comment">{{ comment }}</p>
         </div>
         <div id="commenter-info">
@@ -11,20 +11,53 @@
 </template>
 
 <script setup>
-import { defineExpose, ref } from 'vue';
+import { computed, defineExpose, onMounted, ref, onActivated } from 'vue';
 
+const parent = ref(null);
 const component = ref(null);
+const width = ref(0);
 const props = defineProps({
     author: { type: String, required: true },
     job: { type: String, default: '' },
     comment: { type: String, required: true },
 });
 
-function getComponent() {
-    return component;
+const style = computed(() => {
+    return width.value !== 0 ? { '--width': `calc(${width.value}px - (50px * 2) - 4px)` } : {};
+});
+
+onMounted(() => {
+    setTimeout(() => {
+        CheckWidth();
+    }, 100);
+});
+
+window.addEventListener('resize', (e) => {
+    CheckWidth();
+});
+
+function CheckWidth() {
+    if (parent.value) {
+        const parentRect = parent.value.getBoundingClientRect();
+        const cardRect = component.value.getBoundingClientRect();
+
+        if (parentRect.width - 40 <= cardRect.width) {
+            width.value = parentRect.width - 40;
+        } else {
+            width.value = 0;
+        };
+    };
 };
 
-defineExpose({ getComponent })
+function defineParent(parentComponent) {
+    parent.value = parentComponent;
+};
+
+function getComponent() {
+    return component.value;
+};
+
+defineExpose({ getComponent, defineParent });
 </script>
 
 <style scoped>
@@ -34,13 +67,14 @@ defineExpose({ getComponent })
 
 #comment-info {
     --padding: 50px;
+    --width: calc(600px - (var(--padding) * 2));
     --border: 2px;
 
     background-color: var(--secondary-color);
     border: var(--border) solid var(--primary-color);
     border-radius: 45px;
     width: 100%;
-    max-width: calc(600px - (var(--padding) * 2));
+    max-width: var(--width);
     padding: var(--padding);
     min-height: 150px;
     position: relative;
@@ -56,7 +90,6 @@ defineExpose({ getComponent })
 
 #comment-info::before {
     border-top: var(--size) solid var(--secondary-color);
-    /* border-top: var(--size) solid var(--white); */
     border-right: var(--size) solid transparent;
     border-bottom: var(--size) solid transparent;
     border-left: var(--size) solid transparent;

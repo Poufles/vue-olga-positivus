@@ -66,6 +66,7 @@ function ButtonType() {
     --padding: 50px;
 
     width: 100%;
+    min-width: calc(420px - (var(--padding) * 2));
     padding: var(--padding);
     display: flex;
     flex-direction: column;
@@ -88,5 +89,31 @@ function ButtonType() {
 /* TYPES */
 .--_card-template.type-3 #info-title {
     color: var(--white)
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 520px) {
+    .info-card {
+        min-width: 0;
+    }
+
+    .info-card img {
+        aspect-ratio: 1;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .--_card-template {
+        height: 370px;
+    }
+
+    .info-card img {
+        top: calc(50% + 20px);
+        left: 50%;
+        bottom: 0;
+        right: 0;
+        transform: translate(-50%, -50%);
+    }
 }
 </style>

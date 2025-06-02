@@ -4,11 +4,11 @@
             <h1 id="title">
                 Navigating the digital landscape for success
             </h1>
-            <p id="sub-title">
+            <p id="sub-title" v-if="width > 1049">
                 Our digital marketing agency helps businesses grow and succeed online through a range of services
                 including SEO, PPC, social media marketing, and content creation.
             </p>
-            <BasicButton :text="'Book a consultation'" :type="2" />
+            <BasicButton :text="'Book a consultation'" :type="2" v-if="width > 1049" />
         </div>
         <div id="right">
             <picture class="icon">
@@ -136,11 +136,24 @@
                     </defs>
                 </svg>
             </picture>
+            <p id="sub-title" v-if="width <= 1049">
+                Our digital marketing agency helps businesses grow and succeed online through a range of services
+                including SEO, PPC, social media marketing, and content creation.
+            </p>
+            <BasicButton id="action" :text="'Book a consultation'" :type="2" v-if="width <= 1049" />
+
         </div>
     </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
+const width = ref(window.innerWidth);
+
+window.addEventListener('resize', (e) => {
+    width.value = window.innerWidth;
+});
 </script>
 
 <style scoped>
@@ -167,5 +180,56 @@
 .icon svg {
     width: 600px;
     height: auto;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 1049px) {
+    .home-hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #left {
+        max-width: 100%;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #left #title {
+        text-align: center;
+    }
+
+    #right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #right .icon {
+        display: flex;
+        justify-content: center;
+    }
+
+    #right #sub-title {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    #right #sub-title #action {
+        max-width: max-content;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    #right {
+        align-items: initial;
+    }
+
+    #right #sub-title #action {
+        max-width: none;
+        width: 100%;
+    }
 }
 </style>
