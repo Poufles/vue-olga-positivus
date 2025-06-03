@@ -23,7 +23,7 @@ const props = defineProps({
 });
 
 const style = computed(() => {
-    return width.value !== 0 ? { '--width': `calc(${width.value}px - (50px * 2) - 4px)` } : {};
+    return width.value !== 0 ? { '--width': `calc(${width.value}px - (var(--padding) * 2) - 4px)` } : {};
 });
 
 onMounted(() => {
@@ -123,5 +123,18 @@ defineExpose({ getComponent, defineParent });
 #job {
     color: var(--white);
     margin-top: -5px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 420px) {
+    #comment-info {
+        --padding: 30px;
+    }
+
+    #commenter-info {
+        margin-top: 40px;
+        margin-left: 60px;
+        max-width: 150px;
+    }
 }
 </style>

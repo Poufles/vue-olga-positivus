@@ -23,4 +23,18 @@
     display: flex;
     gap: 50px;
 }
+
+/* RESPONSIVE */
+@media screen and (max-width: 920px) {
+    .wrapper {
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (max-width: 420px) {
+    .wrapper {
+    padding: 50px 30px;
+}
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="component section-title">
+    <div class="component section-title" :class="{ 'no-desc': desc === '' }">
         <h2 id="title">{{ title }}</h2>
         <div class="container">
             <p id="desc">{{ desc }}</p>
@@ -23,7 +23,13 @@ const props = defineProps({
     gap: 40px;
 }
 
+.component.no-desc {
+    gap: 0
+}
+
 #title {
+    flex-shrink: 0;
+
     background-color: var(--primary-color);
     border-radius: 7px;
     color: var(--secondary-color);
@@ -34,5 +40,27 @@ const props = defineProps({
 
 #desc {
     max-width: 600px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 800px) {
+    .component {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .component {
+
+        margin-bottom: 40px;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    #title {
+        width: auto
+    }
 }
 </style>

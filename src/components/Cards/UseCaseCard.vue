@@ -36,4 +36,25 @@ const props = defineProps({
     border-left: 2px solid var(--white);
     border-right: 2px solid var(--white);
 }
+
+/* RESPONSIVE */
+@media screen and (max-width: 920px) {
+    .use-case-card-btn {
+        width: 100%;
+        min-width: 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    #middle {
+        border-left: 0;
+        border-right: 0;
+        border-top: 2px solid var(--white);
+        border-bottom: 2px solid var(--white);
+        padding: 50px 0;
+
+    }
+}
 </style>

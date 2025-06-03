@@ -6,7 +6,7 @@
                     <h1 id="num" v-if="num">{{ num }}</h1>
                     <h3 id="title">{{ title }}</h3>
                 </div>
-                <button class="action" @click="Expand()" >
+                <button class="action" @click="Expand()">
                     <span class="expand-line" id="horizontal" :class="{ expand: isExpanded }"></span>
                     <span class="expand-line" id="vertical" :class="{ expand: isExpanded }"></span>
                 </button>
@@ -101,5 +101,26 @@ function Expand() {
     min-height: max-content;
     margin-top: 40px;
     padding-top: 40px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 620px) {
+    .qna-card {
+        --padding: 30px 40px;
+
+        width: 100%;
+        height: 60px;
+        padding: var(--padding);
+        overflow: hidden;
+    }
+
+    .action {
+        height: 40px;
+    }
+
+    .expand-line {
+        height: 3px;
+        width: 25px;
+    }
 }
 </style>

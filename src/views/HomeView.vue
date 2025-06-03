@@ -24,12 +24,12 @@ import Team from '@/components/Sections/Team/Team.vue';
 import Testimonials from '@/components/Sections/Testimonials/Testimonials.vue';
 import ContactAccess from '@/components/Sections/ContactAccess/ContactAccess.vue';
 
-import amazonLogo from '../../public/logo/logo-amazon.svg?raw';
-import dribbleLogo from '../../public/logo/logo-dribble.svg?raw';
-import hubspotLogo from '../../public/logo/logo-hubspot.svg?raw';
-import notionLogo from '../../public/logo/logo-notion.svg?raw';
-import netflixLogo from '../../public/logo/logo-netflix.svg?raw';
-import zoomLogo from '../../public/logo/logo-zoom.svg?raw';
+import amazonLogo from '/logo/logo-amazon.svg?raw';
+import dribbleLogo from '/logo/logo-dribble.svg?raw';
+import hubspotLogo from '/logo/logo-hubspot.svg?raw';
+import notionLogo from '/logo/logo-notion.svg?raw';
+import netflixLogo from '/logo/logo-netflix.svg?raw';
+import zoomLogo from '/logo/logo-zoom.svg?raw';
 
 const logos = [
     {

@@ -4,10 +4,11 @@
             :desc="'Meet the skilled and experienced team behind our successful digital marketing strategies'"
             class="title" />
         <div class="team-info">
-            <TeamInfo v-for="profile in teamProfile" :name="profile.name" :title="profile.title" :desc="profile.desc" :img="profile.img" />
+            <TeamInfo v-for="profile in teamProfile" :name="profile.name" :title="profile.title" :desc="profile.desc"
+                :img="profile.img" />
         </div>
         <div class="action">
-            <BasicButton :text="'See all team'" :type="2" />
+            <BasicButton class="btn" :text="'See all team'" :type="2" />
         </div>
     </section>
 </template>
@@ -28,12 +29,12 @@ const teamProfile = [
         title: 'CEO and Founder',
         desc: '10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy',
         img: teamProfile1
-    }, 
+    },
     {
         name: 'Jane Doe',
         title: 'Director of Operations',
         desc: '7+ years of experience in project management and team leadership. Strong organizational and communication skills',
-        img: teamProfile2  
+        img: teamProfile2
     },
     {
         name: 'Michael Brown',
@@ -74,5 +75,20 @@ const teamProfile = [
     flex-wrap: wrap;
     gap: 40px;
     justify-content: space-between;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 420px) {
+    .action {
+        display: block;
+    }
+
+    .team-info {
+        margin-bottom: 40px;
+    }
+
+    .btn {
+        width: 100%;
+    }
 }
 </style>

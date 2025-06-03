@@ -82,4 +82,22 @@ const props = defineProps({
     position: absolute;
     right: 35px;
 }
+
+/* RESPONSIVE */
+@media screen and (max-width: 420px) {
+    .--_component-template {
+        flex-basis: 100%;
+        min-width: auto;
+        height: auto;
+    }
+
+    .team-info-card {
+        padding: 35px 30px;
+    }
+
+    #top {
+        gap: 10px;
+        align-items: end;
+    }
+}
 </style>

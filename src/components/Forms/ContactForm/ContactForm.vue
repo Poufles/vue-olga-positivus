@@ -54,8 +54,8 @@ import BasicTextInput from '@/components/Inputs/BasicTextInput/BasicTextInput.vu
 import SimpleRadioButton from '@/components/RadioButtons/SimpleRadioButton/SimpleRadioButton.vue';
 import { ref } from 'vue';
 
-const email = ref(''); 
-const message = ref(''); 
+const email = ref('');
+const message = ref('');
 
 function Validate() {
 
@@ -105,5 +105,39 @@ form {
     top: var(--padding-v);
     right: 0%;
     transform: translateX(50%);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 800px) {
+    .contact-form {
+        --padding-v: 60px;
+        --padding-h: 40px;
+    }
+
+    #icon {
+        position: absolute;
+        top: 0;
+        right: 0%;
+        transform: translateX(50%);
+    }
+
+    #icon svg {
+        height: 300px;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .contact-form {
+        --padding-h: 30px;
+    }
+
+    #options {
+        justify-content: center;
+    }
+
+    #icon {
+        display: none;
+    }
 }
 </style>

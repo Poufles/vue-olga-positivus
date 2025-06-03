@@ -294,4 +294,65 @@ footer {
         justify-content: initial;
     }
 }
+
+@media screen and (max-width: 720px) {
+    #virtual-info {
+        min-width: initial;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    footer {
+        padding: 55px 40px;
+    }
+
+    #links {
+        flex-wrap: wrap;
+    }
+
+    #virtual-info .wrapper {
+        flex-direction: column;
+    }
+
+    #virtual-info #email-input {
+        height: 68px;
+    }
+
+    #virtual-info input {
+        background-color: transparent;
+        border: 0;
+        color: var(--white);
+        width: 100%;
+        outline: none;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    footer {
+        padding: 55px 20px;
+        align-items: center;
+    }
+
+    #navigations {
+        align-items: center;
+    }
+
+    #links {
+        flex-direction: column;
+    }
+
+    #physical-info {
+        max-width: initial;
+        align-items: center;
+        text-align: center;
+    }
+
+    #physical-info #address-info {
+        max-width: 320px;
+    }
+
+    #rights {
+        flex-direction: column;
+    }
+}
 </style>

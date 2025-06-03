@@ -1,8 +1,8 @@
 <template>
     <div class="component comment-carousel" ref="component">
         <div id="comments" :style="[`left: ${centerValue}px`]">
-            <CommentCard class="comment" ref="commentCardObj" v-for="comment in comments" :author="comment.author" :job="comment.job"
-                :comment="comment.comment" :key="`comment-${comment.id}`" />
+            <CommentCard class="comment" ref="commentCardObj" v-for="comment in comments" :author="comment.author"
+                :job="comment.job" :comment="comment.comment" :key="`comment-${comment.id}`" />
             <CommentCard class="comment" :author="comments[0].author" :job="comments[0].job"
                 :comment="comments[0].comment" :key="`comment-${comments[0].id}`" />
         </div>
@@ -203,6 +203,23 @@ function GoRight() {
 @media screen and (max-width: 799px) {
     #stars {
         margin: 0 50px;
+    }
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 520px) {
+    .comment-carousel {
+        --padding-v: 40px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .comment-carousel {
+        height: calc(700px - (var(--padding-v) + 50px));
+    }
+
+    .arrow {
+        display: none;
     }
 }
 </style>
