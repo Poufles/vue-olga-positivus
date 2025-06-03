@@ -10,12 +10,19 @@
     --gray: #F3F3F3;
 }
 
+html {
+    width: 100dvw;
+    position: relative;
+    overflow-x: hidden;
+}
+
 body {
     min-height: 100dvh;
     margin: 0 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 
 h1 {
