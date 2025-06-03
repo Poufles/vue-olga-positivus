@@ -1,7 +1,7 @@
 <template>
     <nav id="navbar" :class="{ hide: isMobile }">
         <div id="left">
-            <RouterLink :to="{ name: 'test' }" class="logo">
+            <RouterLink :to="{ name: 'home' }" class="logo">
                 <Logo :dark="true" />
             </RouterLink>
         </div>
